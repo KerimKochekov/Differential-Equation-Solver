@@ -5,10 +5,12 @@ def normalize(x0,X,h):
     for i in range(len(tmp)):
         tmp[i] = float("{0:.5f}".format(tmp[i]))
     return tmp
+
 def Graph(f1,x0,X,y0,derivative):
     xf = normalize(x0, X, 0.001)
     yf = odeint(derivative,y0,xf)
     f1.add_subplot(111).plot(xf,yf,color='black')
+    
 def Error(a,b):
     er = []
     for i in range(len(a)):
